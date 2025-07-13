@@ -1,6 +1,6 @@
 # ✅ SkillCraft To-Do App
 
-**Live Site:** [https://rajankumar2511.github.io/SCT_WD_4/](#)  
+Live Site: [https://rajankumar2511.github.io/SCT_WD_4/](https://rajankumar2511.github.io/SCT_WD_4/)
 
 ---
 
