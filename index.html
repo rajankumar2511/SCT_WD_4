@@ -214,7 +214,6 @@
     <ul id="taskList"></ul>
   </div>
 
-  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
 
@@ -249,9 +248,9 @@
       if (!taskText) return;
 
       const li = document.createElement('li');
-      li.dataset.datetime = datetime; // 🔥 For editable datetime reference
+      li.dataset.datetime = datetime;
 
-      li.dataset.tags = tags.join(',').toLowerCase(); // for filtering
+      li.dataset.tags = tags.join(',').toLowerCase();
 
       const content = document.createElement('div');
       content.innerHTML = `<strong>${taskText}</strong>`;
@@ -301,7 +300,6 @@
     <button id="saveEditBtn" style="margin-top: 10px; padding: 6px 10px; font-size: 0.85rem; background: #00ff7f; color: #000; border-radius: 6px; border: none;">Save</button>
   `;
 
-          // Reinitialize Flatpickr on edit date input
           flatpickr("#editDateInput", {
             enableTime: true,
             dateFormat: "Y-m-d H:i",
@@ -309,7 +307,6 @@
             altFormat: "F j, Y (h:i K)"
           });
 
-          // Optional: pre-fill the date if available
           const editDateInput = content.querySelector("#editDateInput");
           if (li.dataset.datetime) {
             editDateInput._flatpickr.setDate(new Date(li.dataset.datetime), true);
@@ -321,7 +318,6 @@
             const updatedTags = content.querySelector('#editTagsInput').value.split(',').map(tag => tag.trim()).filter(Boolean);
 
             if (updatedTask) {
-              // Clear and rebuild content
               content.innerHTML = `<strong>${updatedTask}</strong>`;
 
               if (updatedDate) {
